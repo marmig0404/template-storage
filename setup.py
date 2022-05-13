@@ -10,7 +10,7 @@ setup(
     long_description=LONG_DESCRIPTION,
     long_description_content_type='text/markdown',
     license='GNU GPLv3',
-    keywords='stl python voxel',
+    keywords='storage python template compression',
     author='Martin Miglio',
     url='https://github.com/marmig0404/template_storage',
     download_url='https://github.com/marmig0404/template_storage/releases',
