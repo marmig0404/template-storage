@@ -1,11 +1,11 @@
-# Template Store
+# Template Storage
 
-Template Store is a module that compresses template images into a store.
+Template Storage is a module that compresses template images into a store.
 ## Usage
 ### Command Line
 ```
-> templatestore -h
-usage: templatestore [-h] [-s--storepath STORE_PATH] [-l] [-f FILES [FILES ...]] [-r REMOVE [REMOVE ...]]
+> templatestorage -h
+usage: templatestorage [-h] [-s--storepath STORE_PATH] [-l] [-f FILES [FILES ...]] [-r REMOVE [REMOVE ...]]
 
 Import images into a template store
 
@@ -21,8 +21,8 @@ options:
 ```
 ### Python Import
 ```
->>> from templatestore import TemplateStore
->>> ts = TemplateStore("myStoreName")	# open new template store "myStoreName"  
+>>> from templatestorage import Store
+>>> ts = Store("myStoreName")	# open new template store "myStoreName"  
 >>> from PIL import Image
 >>> img = Image.open("myTemplate.png")
 >>> ts.add_templates({"myTemplateName":img})	# add an image to the template store
