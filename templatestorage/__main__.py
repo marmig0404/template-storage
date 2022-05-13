@@ -43,18 +43,16 @@ class Store:
             self.template_store.update(template_dict)
             self.save_store()
 
-    def remove_template(self, template_name):
-        """Remove a template from the store by name.
+    def remove_templates(self, template_names: list[str]):
+        """Remove template(s) from the store by name.
 
         Args:
-            template_name (str): name of template to remove
+            template_name (list[str]): name of template to remove
         """
         if self.template_store is not None:
-            # remove element from dict and update store
-            try:
-                self.template_store.pop(template_name)
-            except KeyError:
-                print(f"Template, {template_name} not found in store.")
+            # list comprehension for filtering dict
+            self.template_store = dict(
+                [(name, image) for name, image in self.template_store.items() if name not in template_names])
             self.save_store()
 
     def open_store(self):
@@ -160,17 +158,16 @@ def main():
         for entry in ts.template_store:
             print(entry, end=", ")
     else:
-        # add files to template store
         if args.files is not None:
+            # make template dictionary
             td = {}
             for file in args.files:
                 td.update({file.split(".")[0]: Image.open(file)})
+            # add dictionary to store
             ts.add_templates(td)
-        # remove files from template store
         if args.remove is not None:
-            td = {}
-            for file_to_remove in args.remove:
-                ts.remove_template(file_to_remove)
+            # remove files from template store
+            ts.remove_templates(args.remove)
 
 
 if __name__ == "__main__":

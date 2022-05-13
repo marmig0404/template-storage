@@ -1,7 +1,8 @@
+import os
 import unittest
+
 from PIL import Image
 from templatestorage import Store
-import os
 
 
 class TemplateStoreTest(unittest.TestCase):
@@ -35,9 +36,8 @@ class TemplateStoreTest(unittest.TestCase):
         # save template dict to store
         ts.add_templates(td)
         # remove template from store and list
-        ts.remove_template("cathedral")
+        ts.remove_templates(["cathedral", "hdr"])
         td.pop("cathedral")
-        ts.remove_template("hdr")
         td.pop("hdr")
         # read images from store and compare
         for name in td:
