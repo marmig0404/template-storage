@@ -46,7 +46,6 @@ class TemplateStoreTest(unittest.TestCase):
         # pass if no fails
         self.assertTrue(True)
 
-
     def test_compression(self):
         # make test store
         store_path = "tests/assets/TestStoreCompression"
@@ -65,7 +64,7 @@ class TemplateStoreTest(unittest.TestCase):
         ts.add_templates(td)
         # compare sizes of files
         tp_size = sum([os.path.getsize("tests/assets/"+tn)
-                    for tn in tns])
+                       for tn in tns])
         ts_size = os.path.getsize(store_path)
         print(f"Compression Ratio: {tp_size/ts_size}")
         self.assertTrue(ts_size < tp_size)
