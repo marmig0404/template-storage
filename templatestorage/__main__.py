@@ -1,5 +1,5 @@
 """
-Module for template-store.
+Module for template-storage.
 
 Can be imported, or ran from comandline
 """
@@ -12,7 +12,7 @@ from io import BufferedReader
 from PIL import Image
 
 
-class TemplateStore:
+class Store:
     """
     This class handles interactions with the template store.
 
@@ -153,7 +153,7 @@ def main():
     # parse args
     args = run_parser()
     # open template store
-    ts = TemplateStore(args.store_path)
+    ts = Store(args.store_path)
 
     # list files
     if args.list and ts.template_store is not None:

@@ -1,6 +1,6 @@
 import unittest
 from PIL import Image
-from templatestore import TemplateStore
+from templatestorage import Store
 import os
 
 
@@ -10,7 +10,7 @@ class TemplateStoreTest(unittest.TestCase):
         store_path = "tests/assets/TestStoreAdd"
         if os.path.exists(store_path):
             os.remove(store_path)
-        ts = TemplateStore(store_path)
+        ts = Store(store_path)
         # define template dict and open images
         tns = ["big_building", "big_tree", "cathedral", "fireworks", "hdr", ]
         td = {tn: Image.open("tests/assets/"+tn+".png") for tn in tns}
@@ -28,7 +28,7 @@ class TemplateStoreTest(unittest.TestCase):
         store_path = "tests/assets/TestStoreRemove"
         if os.path.exists(store_path):
             os.remove(store_path)
-        ts = TemplateStore(store_path)
+        ts = Store(store_path)
         # define template dict and open images
         tns = ["big_building", "big_tree", "cathedral", "fireworks", "hdr", ]
         td = {tn: Image.open("tests/assets/"+tn+".png") for tn in tns}
