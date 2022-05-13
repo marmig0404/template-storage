@@ -3,8 +3,9 @@
 Template Storage is a module that compresses template images into a store.
 ## Install
 ### With pip
+```
 > pip install template-storage
-
+```
 ### With pip from source
 ```
 > pip install git+https://github.com/marmig0404/template-storage.git
