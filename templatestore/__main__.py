@@ -66,7 +66,7 @@ class TemplateStore:
         try:
             with open(self.store_name, "rb") as store_file:
                 return self.decompress_pickle(store_file)
-        except:
+        except FileNotFoundError:
             return None
 
     def save_store(self):
