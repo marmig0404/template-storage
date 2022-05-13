@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as f:
 
 setup(
     name='template-storage',
-    version='0.1.0',
+    version='0.1.1',
     description='Turn STL files into voxels, images, and videos',
     long_description=LONG_DESCRIPTION,
     long_description_content_type='text/markdown',
