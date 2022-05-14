@@ -6,7 +6,6 @@ Can be imported, or ran from comandline
 import argparse
 import bz2
 import pickle
-from copy import deepcopy
 from io import BufferedReader
 
 from PIL import Image
