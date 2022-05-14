@@ -1,7 +1,7 @@
 """
 Module for template-storage.
 
-Can be imported, or ran from comandline
+Can be imported, or ran from command line
 """
 import argparse
 import bz2
