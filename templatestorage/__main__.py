@@ -34,14 +34,10 @@ class Store:
         Args:
             template_dict (dict[str, Image]): a dictionary of strings and PIL Images
         """
-        # make template store if none
-        if self.template_store is None:
-            self.template_store = deepcopy(template_dict)
-            self.save_store()
-        else:
-            # update store with new dict
-            self.template_store.update(template_dict)
-            self.save_store()
+
+        # update store with new dict
+        self.template_store.update(template_dict)
+        self.save_store()
 
     def remove_templates(self, template_names: list[str]):
         """Remove template(s) from the store by name.
@@ -65,7 +61,8 @@ class Store:
             with open(self.store_name, "rb") as store_file:
                 return self.decompress_pickle(store_file)
         except FileNotFoundError:
-            return None
+            print(f"Store not found. Will save new store as {self.store_name}")
+            return {}
 
     def save_store(self):
         """Write template_dict to store file."""
